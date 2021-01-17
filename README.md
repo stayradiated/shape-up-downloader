@@ -1,4 +1,22 @@
-# Shape up downloader
+# Shape Up Downloader
+
+This is a fork of https://github.com/j6s/shape-up-downloader.
+
+It adds a `Dockerfile` so you can run it without having to manually install PHP
+and Composer.
+
+```bash
+# install dependencies and run downloader inside of a docker image
+docker build -t stayradiated/shape-up-downloader .
+
+# copy shape-up.html from image to local directory
+docker run --rm --entrypoint cat stayradiated/shape-up-downloader /app/shape-up.html > shape-up.html
+
+# remove docker image
+docker rmi stayradiated/shape-up-downloader
+```
+
+---
 
 ## What does it do?
 This is a simple CLI application that downloads [basecamps excellent free shape up book](https://basecamp.com/shapeup)
